@@ -4,17 +4,8 @@ import Login from './components/Login'
 import blogService from './services/blogs'
 
 const App = () => {
-  const [blogs, setBlogs] = useState([])
   const [user, setUser] = useState(null)
-
-  useEffect(() => {
-    if (user) {
-      blogService.getAll().then(blogs =>
-        setBlogs(blogs)
-      )
-    }
-  }, [user])
-
+  
   useEffect(() => {
     const loggedUser = window.localStorage.getItem('loggedUser')
     if(loggedUser) {
@@ -32,7 +23,7 @@ const App = () => {
 
   const blogList = () => {
     return (
-      <BlogList blogs={blogs} setBlogs={setBlogs} user={user} setUser={setUser}></BlogList>
+      <BlogList user={user} setUser={setUser}></BlogList>
     )
   }
 
