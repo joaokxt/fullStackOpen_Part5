@@ -26,7 +26,7 @@ const Blog = ({ blog, updateBlog, removeBlog }) => {
   }
 
   return(
-    <div style={blogStyle}>
+    <div style={blogStyle} data-testid={blog.title}>
       <div>
         <b>{blog.title}</b> <button onClick={() => updateBlog(blog.id)}>Like</button><button onClick={toggleVisibility} style={hideWhenVisible}>Show</button>
       </div>

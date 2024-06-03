@@ -52,7 +52,9 @@ const Login = ({ user, setUser }) => {
                 type="text"
                 value={username}
                 name="Username"
-                onChange={({ target }) => setUsername(target.value)} />
+                onChange={({ target }) => setUsername(target.value)} 
+                data-testid='username'
+              />
             </div>
             <div>
               Password
@@ -60,7 +62,9 @@ const Login = ({ user, setUser }) => {
                 type="text"
                 value={password}
                 name="Password"
-                onChange={({ target }) => setPassword(target.value)} />
+                onChange={({ target }) => setPassword(target.value)} 
+                data-testid='password'
+              />
             </div>
             <button type="submit">Log-in</button>
           </form>
